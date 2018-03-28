@@ -74,9 +74,7 @@ linkItem { id, title, url } =
     Html.li [ Attributes.class "linkItem" ]
         [ link title url
         , Html.div []
-            [ Html.button
-                [ Events.onClick (DeleteListItem id) ]
-                [ Html.text "Delete" ]
+            [ Html.button [ Events.onClick (DeleteListItem id) ] [ Html.text "Delete" ]
             ]
         ]
 

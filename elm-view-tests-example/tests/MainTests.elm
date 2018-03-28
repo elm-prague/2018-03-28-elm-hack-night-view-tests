@@ -32,6 +32,14 @@ all =
                     Main.link "" someUrl
                         |> Query.fromHtml
                         |> Query.has [ attribute (Attributes.href someUrl) ]
+            , fuzz2 string string "sets title and url" <|
+                \title url ->
+                    Main.link title url
+                        |> Query.fromHtml
+                        |> Query.has
+                            [ text title
+                            , attribute (Attributes.href url)
+                            ]
             ]
         , describe "linkItem view"
             [ test "sends DeleteListItem" <|
