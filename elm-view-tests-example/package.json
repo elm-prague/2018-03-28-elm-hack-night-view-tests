@@ -1,0 +1,29 @@
+{
+  "name": "elm-view-tests-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "run-s dev:start",
+    "dev:start": "cross-env PORT=3030 BROWSER=none elm-app start",
+    "dev:nodebug": "cross-env ELM_DEBUGGER=false run-s dev",
+    "build": "run-s build:app",
+    "build:app": "elm-app build",
+    "format": "run-s format:elm-format format:prettier",
+    "format:elm-format": "elm-format --yes ./src/ ./tests/",
+    "format:prettier": "prettier --write \"bin/**/*.js\" \"src/**/*.js\" \"src/**/*.json\" public/manifest.json README.md elm-analyse.json",
+    "elm:install": "elm-app install",
+    "prettier": "prettier --write 'src/**/*.js' public/manifest.json",
+    "test": "elm-app test",
+    "test:coverage": "elm-coverage --elm-test ./node_modules/.bin/elm-test",
+    "test:watch": "run-s \"test --watch\""
+  },
+  "devDependencies": {
+    "create-elm-app": "1.10.3",
+    "cross-env": "5.1.4",
+    "elm-coverage": "0.1.7",
+    "elm-format": "^0.7.0-exp",
+    "npm-run-all": "4.1.2",
+    "prettier": "1.11.1"
+  }
+}
