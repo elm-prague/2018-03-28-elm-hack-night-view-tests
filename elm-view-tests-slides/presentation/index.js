@@ -68,10 +68,14 @@ export default class Presentation extends Component {
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src={require('../assets/elm-prague-number-one.jpg')} />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading size={1} textColor="primary">
             ?
           </Heading>
         </Slide>
+        {/*
         <Slide>
           <Heading size={1} textColor="secondary">
             View
@@ -85,12 +89,8 @@ export default class Presentation extends Component {
 
 view : Model -> Html Msg`}
           />
-        </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading size={1} textColor="primary">
-            ?
-          </Heading>
-        </Slide>
+         </Slide>
+        */}
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading size={1} textColor="primary">
             Thanks!
