@@ -1,10 +1,8 @@
 module Tests exposing (..)
 
 import Expect
+import Fuzz exposing (string)
 import Test exposing (..)
-
-
--- Check out http://package.elm-lang.org/packages/elm-community/elm-test/latest to learn more about testing in Elm!
 
 
 all : Test
@@ -13,10 +11,10 @@ all =
         [ test "Addition" <|
             \_ ->
                 Expect.equal 10 (3 + 7)
-        , test "String.left" <|
+        , test "String.reverse 'git'" <|
             \_ ->
-                Expect.equal "a" (String.left 1 "abcdefg")
-        , test "This test should fail" <|
-            \_ ->
-                Expect.fail "failed as expected!"
+                Expect.equal "tig" (String.reverse "git")
+        , fuzz string "String.reverse (String.reverse x) should return x" <|
+            \x ->
+                Expect.equal x (String.reverse (String.reverse x))
         ]
